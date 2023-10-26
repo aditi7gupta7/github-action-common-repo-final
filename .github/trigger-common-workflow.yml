@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-	    - name: checkout code
-	      uses: actions/checkout@v2
+      - name: checkout code
+	uses: actions/checkout@v2
 	  
       - name: Set up JDK 17
         uses: actions/setup-java@v2
@@ -28,11 +28,11 @@ jobs:
 
 
       - name: create Artifact
-	      run: mkdir staging && cp target/*.jar staging
-		    working-directory: ${{ github.workspace }}
-	    - name: upload artifact
-	      uses: actions/upload-artifact@v2 
-		    with:
+	run: mkdir staging && cp target/*.jar staging
+	working-directory: ${{ github.workspace }}
+      - name: upload artifact
+	uses: actions/upload-artifact@v2 
+	with:
           name: Package
           path: staging
  
